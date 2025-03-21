@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import type { ContentProps } from 'app2/Content';
+import Content from 'app2/src/client/components/Content';
+// import type { ContentProps } from 'app2/Content';
 
-const Content = React.lazy(
-  () => import('app2/Content') as Promise<{ default: React.FC<ContentProps> }>,
-);
+// const Content = React.lazy(
+//   () => import('app2/Content') as Promise<{ default: React.FC<ContentProps> }>,
+// );
 
 const App = () => {
   const [state, setState] = React.useState<string>('');
@@ -31,22 +32,24 @@ const App = () => {
       <div style={{ padding: '1rem' }}>
         <h3>Type something into this input</h3>
         <input
-          type="text"
+          type='text'
           value={state}
-          onChange={e => setState(e.target.value)}
-          placeholder="Luke, I am your father..."
+          onChange={(e) => setState(e.target.value)}
+          placeholder='Luke, I am your father...'
         />
       </div>
 
       <div style={{ padding: '1rem' }}>
-        <button onClick={() => setIsVisible(value => !value)}>Toggle Content</button>
+        <button onClick={() => setIsVisible((value) => !value)}>
+          Toggle Content
+        </button>
       </div>
 
       <div style={{ padding: '1rem' }}>
         {isVisible && (
-          <React.Suspense fallback={<h1>Loading....</h1>}>
-            <Content content={state} />
-          </React.Suspense>
+          // <React.Suspense fallback={<h1>Loading....</h1>}>
+          <Content content={state} />
+          // </React.Suspense>
         )}
       </div>
     </div>

@@ -6,7 +6,7 @@ module.exports = {
     name: 'app2',
     filename: 'remoteEntry.js',
     exposes: {
-      './Content': './src/client/components/Content',
+      './src/client/components/Content': './src/client/components/Content',
     },
     remotes: {},
     shared: [{ react: deps.react, 'react-dom': deps['react-dom'] }],

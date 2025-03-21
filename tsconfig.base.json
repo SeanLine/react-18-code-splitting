@@ -12,12 +12,23 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@app1/*": ["./app1/src/*"],
-      "@app2/*": ["./app2/src/*"]
+      "app1/*": [
+        "./app1/*"
+      ],
+      "app2/*": [
+        "./app2/*"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
